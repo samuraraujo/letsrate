@@ -1,4 +1,9 @@
+# About This Branch
+
+Added support to change ratings.
+
 # Letsrate Rating Gem
+
 
 Provides the best way to add rating capabilites to your Rails application with jQuery Raty plugin.
 
