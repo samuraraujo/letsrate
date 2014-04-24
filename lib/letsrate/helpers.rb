@@ -31,19 +31,19 @@ module Helpers
     #readonly = !(current_user && rateable_obj.can_rate?(current_user, dimension))
  
 		tr = content_tag :tr do 
-  			 content_tag(:td, content_tag(:div, content_tag(:div, avg, :style=>"position:relative;float:left;top: 0;left: 0;" ), :class=>"fa fa-star-o fa-3x pull-left"))
+  			 content_tag(:td, content_tag(:div, content_tag(:div, avg, :style=>"'position:relative;float:left;top: 0;left: 0;'" ), :class=>"'fa fa-star-o fa-3x pull-left'"))
   			 content_tag :td do 
   			 	content_tag :div, '', "data-dimension" => dimension, :class => "star", "data-rating" => avg,
                 "data-id" => rateable_obj.id, "data-classname" => rateable_obj.class.name,
                 "data-disable-after-rate" => disable_after_rate,
                 #"data-readonly" => readonly,
                 "data-star-count" => star)			 
-                		content_tag(:font, "(#{rateable_obj.rates("quality").count}) votos", :class=>"twelve")
+                		content_tag(:font, "(#{rateable_obj.rates("quality").count}) votos", :class=>"'twelve'")
                 	end
 		end
 		
  
-    content_tag :table ,tr , :style="color:#aaa")		
+    content_tag (:table ,tr , :style=>"'color:#aaa'")		
     
   end
 
