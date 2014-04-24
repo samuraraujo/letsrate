@@ -5,7 +5,7 @@ module Letsrate
   def rate(stars, user, dimension=nil, dirichlet_method=false)
     dimension = nil if dimension.blank?
 
-      user.ratings_given.where(dimension: dimension, rateable_id: id, rateable_type: self.class.name).destroy!
+      user.ratings_given.where(dimension: dimension, rateable_id: id, rateable_type: self.class.name).each{|x| x.destroy!}
       rates(dimension).create! do |r|
         r.stars = stars
         r.rater = user
